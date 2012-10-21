@@ -1,0 +1,100 @@
+
+div {
+	background-repeat: no-repeat;
+}
+
+.header {
+	height: 40px;
+	padding: 5px 80px;
+	position: relative;
+	background-color: #E0EBFF;
+	margin-bottom: 10px;
+}
+
+.auth-bloc {
+	right:25px;
+	top: 5px;
+	position: absolute;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.container div.mathdash-control {
+	margin-bottom: 24px 
+}
+
+.container div.mathdash-action {
+	margin-top: 24px;
+}
+
+.mathdash-action {
+	font-size: 4em;
+}
+.mathdash-action .input[type=text] {
+	font-size: 4em;
+}
+#answer {
+	height: 64px;
+	font-size: 1em;
+	width: 100%;
+}
+
+span.bigger, p.bigger {
+	font-size: 2em;
+}
+span.smaller, p.smaller {
+	font-size: .75em;
+}
+
+.subscript {
+	font-size: .75em;
+	font-style: italic;
+}
+
+div.mathdash-control div {
+	height: 48px;
+	background-repeat: no-repeat;
+}
+
+.mathdash-control div.play {
+	background-image: url(../images/Play.png)
+}
+.mathdash-control div.pause {
+	background-image: url(../images/Pause.png)
+}
+.mathdash-control div.stop {
+	background-image: url(../images/Stop.png)
+}
+
+.mathdash-status {
+	height:48px;
+	width:48px;
+	margin:7px;
+	background-repeat: no-repeat
+}
+.good {
+	background-image: url(../images/Check.png)
+}
+.oops {
+	background-image: url(../images/Oops.png)
+}
+
+.nodisplay {
+	display: none;
+}
+.positive {
+	background-image: url(../images/Positive.png)
+}
+.negative {
+	background-image: url(../images/Negative.png)
+}
+
+.mathdash-info div span img {
+	margin-left: 10px;
+}
+
+#mathdash-emoticon {
+	height: 48px;
+}

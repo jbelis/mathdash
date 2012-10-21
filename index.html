@@ -1,0 +1,78 @@
+{% extends "templates/base.html" %} 
+
+{% block content %}
+<div class="container">
+	<div class="row">
+
+		<div class="span3">
+			<div class="well sidebar-nav">
+				<ul class="nav nav-list">
+					<li class="nav-header">Challenges</li>
+					<li id="two_factor_multiplication_upto_9" class="active gamechoice">
+						<a href="#">Multiply</a>
+						<!-- <span class="subscript">Multiplication Table Practice</span>
+					 -->
+					 </li>
+					<li id="additions_substractions" class="gamechoice">
+						<a href="#">Add & Substract</a>
+						<!-- <span class="subscript">additions and substractions of relative integers</span>
+						 -->
+					</li>
+				</ul>
+			</div>
+			<!--/.well -->
+		</div>
+		<div class="offset1 span8">
+			<div class="row">
+				<div class="row mathdash-control">
+					<div class="span1 play" id="start"></div>
+					<div class="span1 stop" id="stop"></div>
+					<div class="span1">
+						<span class="nodisplay" id="paused">(paused)</span>
+					</div>
+				</div>
+
+				<div class="row mathdash-action">
+					<div class="span6">
+						<span id="question"></span>
+					</div>
+				</div>
+
+				<div class="row mathdash-action">
+					<div class="span4">
+						<input id="answer" type="text" />
+					</div>
+					<div class="span4">
+						<div class="mathdash-status"></div>
+					</div>
+				</div>
+
+				<div class="row mathdash-info">
+					<div class="span1">
+						<p>{{ r_points }}</p>
+						<p id="score" class="bigger">0</p>
+					</div>
+					<div class="span4">
+						<span id="mathdash-running" class="nodisplay">
+							<p>{{ r_seconds_remaining }}</p>
+							<p id="time_left" class="bigger">120</p>
+						</span> <span id="mathdash-goodwork" class="nodisplay">Well done!
+						</span> <span id="mathdash-gaveup" class="nodisplay">Giving up
+							already? </span> <span id="mathdash-results">You answered <span
+							id="questions_total"></span> questions in <span id="time_spent"></span>
+							seconds and got <span id="questions_correct"></span> right.
+						</span>
+					</div>
+					<div class="span3" id="mathdash-emoticon"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+{% endblock %} 
+
+{% block script %}
+<script src="static/js/operations.js" type="text/javascript"></script>
+<script src="static/js/play.js" type="text/javascript"></script>
+{% endblock %}

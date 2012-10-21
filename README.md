@@ -1,4 +1,6 @@
 mathdash
 ========
 
-simple web app to help children and others improve mental calculation skills
+Simple web app to help children and others measure and improve mental calculation skills
+
+

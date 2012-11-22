@@ -7,17 +7,20 @@
 		<div class="span3">
 			<div class="well sidebar-nav">
 				<ul class="nav nav-list">
-					<li class="nav-header">Challenges</li>
+					<li class="nav-header">{{strings.challenges}}</li>
+					{% for k,v in operations.items %}
+					<li id="{{k}}" class="gamechoice {% if forloop.first %} active{% endif %}">
+						<a href="#">{{v.title}}</a>
+					 </li>
+					{% endfor %} 
+					<!-- 
 					<li id="two_factor_multiplication_upto_9" class="active gamechoice">
 						<a href="#">Multiply</a>
-						<!-- <span class="subscript">Multiplication Table Practice</span>
-					 -->
 					 </li>
 					<li id="additions_substractions" class="gamechoice">
 						<a href="#">Add & Substract</a>
-						<!-- <span class="subscript">additions and substractions of relative integers</span>
-						 -->
 					</li>
+					 -->
 				</ul>
 			</div>
 			<!--/.well -->
@@ -49,19 +52,17 @@
 
 				<div class="row mathdash-info">
 					<div class="span1">
-						<p>{{ r_points }}</p>
+						<p>{{ strings.points|safe }}</p>
 						<p id="score" class="bigger">0</p>
 					</div>
 					<div class="span4">
 						<span id="mathdash-running" class="nodisplay">
-							<p>{{ r_seconds_remaining }}</p>
+							<p>{{ strings.seconds_remaining }}</p>
 							<p id="time_left" class="bigger">120</p>
-						</span> <span id="mathdash-goodwork" class="nodisplay">Well done!
-						</span> <span id="mathdash-gaveup" class="nodisplay">Giving up
-							already? </span> <span id="mathdash-results">You answered <span
-							id="questions_total"></span> questions in <span id="time_spent"></span>
-							seconds and got <span id="questions_correct"></span> right.
-						</span>
+						</span> 
+						<span id="mathdash-goodwork" class="nodisplay">{{strings.well_done|safe}}</span> 
+						<span id="mathdash-gaveup" class="nodisplay">{{strings.giving_up_already|safe}}</span> 
+						<span id="mathdash-results">{{strings.result_stats|safe}}</span>
 					</div>
 					<div class="span3" id="mathdash-emoticon"></div>
 				</div>

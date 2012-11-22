@@ -19,6 +19,8 @@ import os
 import logging
 import json
 
+from webapp2_extras import i18n
+
 from google.appengine.api import users
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
@@ -29,23 +31,8 @@ from mathdash import handler, model
 class MainHandler(handler.BaseHandler):
     def get(self):
         modl = self.init_model()
-        
-        # get the games
-        script = []
-        games = dict()
-        q = model.Game.all()
-        for game in q.run():
-            script.append(game.script)
-            script.append('\n')
-            games[game.name] = {
-                'title': game.title,
-                'description': game.description
-            }
-            
-        modl['games'] = json.dumps(games)
-        modl['gamecode'] = ''.join(script)
-        
-        logging.info(modl)
+                
+        logging.debug(modl)
         
         path = os.path.join(os.path.dirname(__file__), 'index.html')
         self.response.out.write(template.render(path, modl))

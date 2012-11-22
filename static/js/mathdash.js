@@ -14,3 +14,6 @@ $(document).ready(function() {
 function confirm_login() {
 }
 
+function gettext(text) {
+	return __strings[text] || text;
+}

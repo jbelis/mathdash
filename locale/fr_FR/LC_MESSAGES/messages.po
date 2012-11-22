@@ -1,15 +1,15 @@
 # French (France) translations for PROJECT.
 # Copyright (C) 2012 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+# FIRST AUTHOR <jbelis@gmail.com>, 2012.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-10-08 00:40+0200\n"
-"PO-Revision-Date: 2012-10-08 00:42+0200\n"
+"POT-Creation-Date: 2012-11-22 05:12+0100\n"
+"PO-Revision-Date: 2012-11-19 22:20+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr_FR <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -18,15 +18,119 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: main.py:25
-msgid "Math Dash - timed math practice"
-msgstr "Math Dash - mathematiques chronometrees"
+#: babel/messages/tests/mofile.py:39 babel/messages/tests/mofile.py:40
+msgid "foo"
+msgstr ""
 
-#: main.py:26
+#: babel/messages/tests/mofile.py:41 babel/messages/tests/mofile.py:42
+msgid "There is"
+msgid_plural "There are"
+msgstr[0] ""
+msgstr[1] ""
+
+#: babel/messages/tests/mofile.py:43 babel/messages/tests/mofile.py:44
+msgid "Fizz"
+msgstr ""
+
+#: babel/messages/tests/mofile.py:45 babel/messages/tests/mofile.py:46
+msgid "Fuzz"
+msgstr ""
+
+#: babel/messages/tests/mofile.py:47 babel/messages/tests/mofile.py:48
+msgid "Fuzzes"
+msgstr ""
+
+#: babel/messages/tests/data/project/file1.py:8
+msgid "bar"
+msgstr ""
+
+#: babel/messages/tests/data/project/file2.py:9
+msgid "foobar"
+msgid_plural "foobars"
+msgstr[0] ""
+msgstr[1] ""
+
+#: babel/messages/tests/data/project/ignored/this_wont_normally_be_here.py:11
+msgid "FooBar"
+msgid_plural "FooBars"
+msgstr[0] ""
+msgstr[1] ""
+
+#: mathdash/operations.py:12
+msgid "Multiply"
+msgstr "Multiplication"
+
+#: mathdash/operations.py:17
+msgid "Add & Substract"
+msgstr "Addition et Soustraction"
+
+#: mathdash/strings.py:9
+msgid "... so you can track your progress"
+msgstr "... pour suivre ta progression"
+
+#: mathdash/strings.py:10
+msgid "Sign in with <b>Google</b>"
+msgstr "Connexion avec <b>Google</b>"
+
+#: mathdash/strings.py:11
+msgid "Math Dash - timed math practice"
+msgstr "Math Dash - mathématiques chronométrées"
+
+#: mathdash/strings.py:12
 msgid "points"
 msgstr "points"
 
-#: main.py:27
+#: mathdash/strings.py:13
 msgid "seconds remaining"
 msgstr "secondes restantes"
+
+#: mathdash/strings.py:14
+msgid "count faster"
+msgstr "calcul r&eacute;flexe"
+
+#: mathdash/strings.py:15
+msgid "How am I doing?"
+msgstr "Mes Scores"
+
+#: mathdash/strings.py:16
+msgid "Challenges"
+msgstr "Challenges"
+
+#: mathdash/strings.py:17
+msgid "You're not signed-in.  Math Dash will not record your points"
+msgstr "Tu n'es pas connect&eacute;!  Ton score ne sera pas enregistr&eacute;."
+
+#: mathdash/strings.py:18
+msgid "Just practice"
+msgstr "Pas grave, je m'entra&icirc;ne."
+
+#: mathdash/strings.py:19
+msgid "Sign Out"
+msgstr "D&eacute;connexion"
+
+#: mathdash/strings.py:20
+msgid "Sign-in now and record my points"
+msgstr "Connecte moi et enregistre mon score."
+
+#: mathdash/strings.py:21
+msgid "Well done!"
+msgstr "Bravo!"
+
+#: mathdash/strings.py:22
+msgid "Giving up already?"
+msgstr "D&eacute;j&agrave;!?"
+
+#: mathdash/strings.py:23
+msgid ""
+"You answered <span id=\"questions_total\"></span> questions in <span "
+"id=\"time_spent\"></span> seconds and got <span "
+"id=\"questions_correct\"></span> right."
+msgstr ""
+"<span id=\"questions_total\"></span> r&eacute;ponses donn&eacute;es en "
+"<span id=\"time_spent\"></span> secondes dont <span "
+"id=\"questions_correct\"></span> correctes."
+
+#: mathdash/strings.py:24
+msgid "Main Page"
+msgstr "Jeux"
 

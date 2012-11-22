@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>{{ r_title }}</title>
+<meta charset="UTF-8">
 <link rel="stylesheet" type="text/css"
 	href="static/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="static/css/mathdash.css">
@@ -12,6 +13,8 @@
 		user: {{user|safe}},
 		login_url: '{{login_url}}'
 	}
+	var operations = {{operations_json|safe}};
+	var __strings = {{strings_json|safe}};
 </script>
 </head>
 
@@ -21,18 +24,18 @@
 
 		<p>
 			<span class="bigger bold">Math Dash</span><br> <span
-				class="smaller italic">{{ r_count_faster }}</span>
+				class="smaller italic">{{ strings.count_faster|safe }}</span>
 		</p>
 
 		<div class="guest auth-bloc" style="display: none;">
-			<a class="btn-auth btn-google" href="{{ login_url }}">{{ r_signin_with_google|safe }}</a><br> 
-			<span class="smaller italic">{{ r_login_justification }}</span>
+			<a class="btn-auth btn-google" href="{{ login_url }}">{{ strings.signin_with_google|safe }}</a><br> 
+			<span class="smaller italic">{{ strings.login_justification|safe }}</span>
 		</div>
 		<div class="authenticated auth-bloc" style="display: none;">
-			<a href="/">Main Page</a> | 
-			<a href="history">{{ r_how_am_i_doing }}</a> | 
+			<a href="/">{{ strings.main_page|safe }}</a> | 
+			<a href="history">{{ strings.how_am_i_doing|safe }}</a> | 
 			{{ email }} | 
-			<a href="{{ logout_url }}">sign out</a>
+			<a href="{{ logout_url }}">{{ strings.sign_out|safe }}</a>
 		</div>
 	</div>
 

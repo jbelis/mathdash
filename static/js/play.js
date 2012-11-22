@@ -133,9 +133,9 @@ function update_score(answer) {
 
 function start() {
 	if (!ctx.user) {
-		bootbox.confirm("You're not signed-in.  Mathdash will no record your points", 
-				"Just practice", 
-				"Sign-in now and record my points", 
+		bootbox.confirm(gettext('not_signed_in'), 
+				gettext("just_practice"), 
+				gettext("sign_me_in"), 
 				function(result) {
 		    if (result) {
 		        window.open(ctx.login_url);

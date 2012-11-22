@@ -21,6 +21,7 @@ from google.appengine.ext import db
 
 from mathdash import model
 from mathdash import strings
+from mathdash import operations
 
 def get_current_gamer():
     user = users.get_current_user();
@@ -38,15 +39,20 @@ def get_current_gamer():
 class BaseHandler(webapp2.RequestHandler):
     def init_model(self):
         # Set the requested locale.        
-        locale = self.request.GET.get('locale', 'en_US')
+        locale = self.request.GET.get('locale')
         if locale:
+            logging.debug("locale provided as parameter: %s", locale)
             i18n.get_i18n().set_locale(locale)
-        logging.info(i18n.get_i18n().locale)
+        else:
+            i18n.get_i18n().set_locale(self.get_requested_locale())
+            
+        logging.info("locale set to %s", i18n.get_i18n().locale)
         
         user = users.get_current_user()
 
         modl = dict()
         strings.add_to_model(modl)
+        operations.add_to_model(modl)
                     
         if user:
             modl['user'] = {
@@ -66,6 +72,34 @@ class BaseHandler(webapp2.RequestHandler):
 
         return modl;
     
+    def get_requested_locale(self):
+        defaultLocale = 'en_US'
+        supportedLocales = ['fr', 'en', 'en_US', 'fr_FR']
+
+        locale_q_pairs = self.parse_accept_language(self.request.headers.get('accept_language'))
+        for pair in locale_q_pairs:
+            for locale in supportedLocales:
+                # pair[0] is locale, pair[1] is q value
+                if pair[0].replace('-', '_').lower().startswith(locale.lower()):
+                    return locale
+
+        return defaultLocale
+ 
+    def parse_accept_language(self, acceptLanguage):
+        logging.debug("Accept-Language: %s", acceptLanguage)
+        languages = acceptLanguage.split(",")
+        locale_q_pairs = []
+        for language in languages:
+            if language.split(";")[0] == language:
+                # no q => q = 1
+                locale_q_pairs.append((language.strip(), "1"))
+            else:
+                locale = language.split(";")[0].strip()
+                q = language.split(";")[1].split("=")[1]
+                locale_q_pairs.append((locale, q))
+
+        return locale_q_pairs
+
 
 
 class ResultHandler(BaseHandler):
